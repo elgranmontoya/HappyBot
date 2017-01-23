@@ -9,11 +9,18 @@ import argparse
 
 from operator import xor
 
+# If you want to use this, put your API access keys in such a file
+# and access accordingly.
+with open('./securityKeys/keys.txt') as f:
+    content = f.readlines()
+keys = [x.strip() for x in content] 
+
 #Variables that contains the user credentials to access Twitter API 
-access_token = "822519285612363776-uf8byB6HrwdXOa6GTB6WZVkprws8PVf"
-access_token_secret = "uXzgZ9Zgt2PJk5XeKgoGGEpuih47rtFctgSl7YKae6seD"
-consumer_key = "GIKl6nmdm7Mx0BFz0wOLeUenT"
-consumer_secret = "XWi8lkyDbt7W2F9Ug2OwWBOvHQWMdpiiipe89dsuSYTWZVqK4i"
+access_token = keys[0]
+access_token_secret = keys[1]
+consumer_key = keys[2]
+consumer_secret = keys[3]
+
 
 happy_emojis = [
 u"\U0001f600", # Grinning face
